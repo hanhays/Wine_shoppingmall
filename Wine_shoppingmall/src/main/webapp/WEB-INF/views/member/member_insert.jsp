@@ -90,6 +90,7 @@
             <!-- End Mainmenu Area -->
         </header>
         <!-- End Header Area -->
+        
         <div class="body__overlay"></div>
         <!-- Start Offset Wrapper -->
         <div class="offset__wrapper">
@@ -163,47 +164,82 @@
             <!-- End Cart Panel -->
         </div>
         <!-- End Offset Wrapper -->
-	    <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/resources/images/bg/2.jpg) no-repeat scroll center center / cover ;">
-            <div class="ht__bradcaump__wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="bradcaump__inner">
-                            	<h1>title</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Bradcaump area --> 
-               
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
-      
+	<div class="container">
+	<div class="page-header">
+		<h1></h1>
+	</div>
+	<form role="form" action="/member/insert" method="post">
+		<div class="row">
+		<table class="table table-bordered" style="text-align: center; border: 1px solid #dddddd">
+			<thead>
+				<tr>
+					<th colspan="3" style="background-color: #eeeeee; text-align: center;">
+						<h5>JOIN US</h5>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="width: 20%;">아이디</td>
+					<td style="text-align: left;">
+						<input required style="width:100px;" type="text" id="id" name="mem_id">
+               			<span id="idmsg"></span>(영문대소문자/숫자,4~16자)
+               			<button id="idcheck" class="btn btn-danger btn-xs">중복확인</button>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">비밀번호</td>
+					<td style="text-align: left;">
+						<input required style="width:100px;" class="form-control" type="password" id="pw" name="mem_pw">
+            			<span id="pwmsg"></span>(영문 대소문자/숫자 중 2가지 이상 조합, 4~10자)
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">비밀번호 확인</td>
+					<td style="text-align: left;">
+						<input required type="password" id="pwck" name="pwcheck">
+						<span id="pwcheckmsg"></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">이름</td>
+					<td style="text-align: left;">
+						<input required type="text" id="name" name="mem_name">
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">성별</td>
+					<td style="text-align: left;">
+						<input required type="radio" id="gender" name="mem_gender" value="m" checked>남성
+						<input required type="radio" id="gender" name="mem_gender" value="f">여성
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">연락처</td>
+					<td style="text-align: left;">
+						<input required type="text" id="contact" name="mem_contact">
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">생년월일</td>
+					<td style="text-align: left;">
+						<input required type="date" id="birth" name="mem_birth">
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<button id="submit" type="submit" class="btn btn-danger">회원등록</button>
+			</div>
+		</div>
+	</form>
+	</div>
+    <!-- class = container  -->   
+
 
         <!-- Start Footer Area -->
         <footer id="htc__footer">
@@ -220,9 +256,13 @@
                                     <div class="ft__social__link">
                                         <ul class="social__link">
                                             <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
+
                                             <li><a href="#"><i class="icon-social-instagram icons"></i></a></li>
+
                                             <li><a href="#"><i class="icon-social-facebook icons"></i></a></li>
+
                                             <li><a href="#"><i class="icon-social-google icons"></i></a></li>
+
                                             <li><a href="#"><i class="icon-social-linkedin icons"></i></a></li>
                                         </ul>
                                     </div>
@@ -331,6 +371,83 @@
     <script src="/resources/js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="/resources/js/main.js"></script>
-
+<script type="text/javascript">
+   $(document).ready(function() {
+      var ckid = '0';
+      var ckpw = '0';
+      var ckpwck = '0';
+      $("#idcheck").click(function() {
+         var ida = $("input[name='mem_id']").val();
+         var limit = /^[a-zA-Z0-9]{4,16}$/;
+         if (!limit.test(ida)) {
+            $("#idmsg").text("4이상 16이하 영문대소문자/숫자를 이용하세요.");
+            $("#idmsg").css("color", "red");
+            ckpw = '0';
+         } else {
+            $.ajax({
+               type : 'get',
+               url : '/member/checkid',
+               data : {
+                  id : ida
+               },
+               dataType : 'text',
+               success : function(result) {
+                  if (result == "1") {
+                     $("#idmsg").text("사용 가능한 아이디 입니다.");
+                     $("#idmsg").css("color", "blue");
+                     ckid = '1';
+                  } else if (result == "0") {
+                     $("#idmsg").text("사용할 수 없는 아이디 입니다.");
+                     $("#idmsg").css("color", "red");
+                     ckid = '0';
+                  }
+               }
+            });
+         }
+         return false;
+      });
+      $("#id").keydown(function() {
+         ckid = '0';
+         $("#idmsg").text("");
+      });
+      $("input[name='mem_pw']").change(function() {
+         var pw = $("input[name='mem_pw']").val();
+         var limit = /^[a-zA-Z0-9]{4,10}$/;
+         if (!limit.test(pw)) {
+            $("#pwmsg").text("4이상 10이하 영문대소문자/숫자를 이용하세요.");
+            $("#pwmsg").css("color", "red");
+            ckpw = '0';
+         } else {
+            $("#pwmsg").text("");
+            ckpw = '1';
+         }
+      });
+      $("input[name='pwcheck']").change(function() {
+         var pw = $("input[name='mem_pw']").val();
+         var pwcheck = $("input[name='pwcheck']").val();
+         if (pw != pwcheck) {
+            $("#pwcheckmsg").text("비밀번호가 일치하지 않습니다.");
+            $("#pwcheckmsg").css("color", "red");
+            ckpwck = '0';
+         } else {
+            $("#pwcheckmsg").text("비밀번호가 일치합니다.");
+            $("#pwcheckmsg").css("color", "blue");
+            ckpwck = '1';
+         }
+      });
+      $("#submit").click(function() {
+         if (ckid != '1') {
+            alert("아이디 중복 확인을 해주세요.");
+         } else if (ckpw != '1') {
+            alert("사용 가능한 비밀번호를 입력하시오.");
+         } else if (ckpwck != '1') {
+            alert("비밀번호가 일치하지 않습니다.");
+         } else if(confirm("회원등록하시겠습니까?") == true){
+        	 return true;
+         }
+		return false;
+      });
+   });
+</script>
 </body>
 </html>

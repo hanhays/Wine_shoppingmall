@@ -170,7 +170,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="bradcaump__inner">
-                            	<h1>title</h1>
+                            	<h1>Member List</h1>
                             </div>
                         </div>
                     </div>
@@ -178,31 +178,166 @@
             </div>
         </div>
         <!-- End Bradcaump area --> 
-               
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
+        <!-- cart-main-area start -->
+        <div class="cart-main-area ptb--100 bg__white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form action="#">               
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product-name">가입일</th>
+                                            <th class="product-name">성별</th>
+                                            <th class="product-name">아이디</th>
+                                            <th class="product-name">이름</th>
+                                            <th class="product-name">연락처</th>
+                                            <th class="product-name">생년월일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<c:forEach items="${to.list}" var="dto">
+                                        <tr>
+                                            <td class="product-name">${dto.mem_regdate}</td>
+                                            <td class="product-name">${dto.mem_gender}</td>
+                                            <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_id}</a></td>
+                                            <td class="product-name">${dto.mem_name}</td>
+                                            <td class="product-name">${dto.mem_contact}</td>
+                                            <td class="product-name">${dto.mem_birth}</td>
+                                        </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="buttons-cart--inner">
+                                        <div class="buttons-cart">
+                                            <a href="#">Continue Shopping</a>
+                                        </div>
+                                        <div class="buttons-cart checkout--btn">
+                                            <a href="#">update</a>
+                                            <a href="#">checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="ht__coupon__code">
+                                        <span>enter your discount code</span>
+                                        <div class="coupon__box">
+                                            <input type="text" placeholder="">
+                                            <div class="ht__cp__btn">
+                                                <a href="#">enter</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12 smt-40 xmt-40">
+                                    <div class="htc__cart__total">
+                                        <h6>cart total</h6>
+                                        <div class="cart__desk__list">
+                                            <ul class="cart__desc">
+                                                <li>cart total</li>
+                                                <li>tax</li>
+                                                <li>shipping</li>
+                                            </ul>
+                                            <ul class="cart__price">
+                                                <li>$909.00</li>
+                                                <li>$9.00</li>
+                                                <li>0</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cart__total">
+                                            <span>order total</span>
+                                            <span>$918.00</span>
+                                        </div>
+                                        <ul class="payment__btn">
+                                            <li class="active"><a href="#">payment</a></li>
+                                            <li><a href="#">continue shopping</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- cart-main-area end -->               
+	<div class="container">
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>가입일</th>
+					<th>아이디</th>
+					<th>이름</th>
+					<th>성별</th>
+					<th>연락처</th>
+					<th>생년월일</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${to.list}" var="dto">
+					<tr>
+						<td>${dto.mem_regdate}</td>
+						<td><a href="/member/read/${dto.mem_id}">${dto.mem_id}</a></td>
+						<td>${dto.mem_name}</td>
+						<td>${dto.mem_gender}</td>
+						<td>${dto.mem_contact}</td>
+						<td>${dto.mem_birth}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+	<!-- class = row  -->		
+	<div class="row">
+		<div class="text-center">
+			<ul class="pagination">
+				<li>
+					<c:if test="${(to.curPage)-(to.curPage%10==0?10:to.curPage%10) > 9 }">
+						<a href="/board/listpage?curPage=${(to.curPage)-(to.curPage%10==0?10:to.curPage%10)}">
+							<span class="glyphicon glyphicon-backward"></span>
+						</a>
+					</c:if>
+				</li>
+				<li>
+					<c:if test="${to.curPage-1 >= 1 }">
+						<a href="/board/listpage?curPage=${to.curPage-1}">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+					</c:if>
+				</li>
+				<c:forEach begin="${to.beginPageNum}" end="${to.stopPageNum}" var="var">
+					<li class="${to.curPage == var?'active':''}"><a href="/board/listpage?curPage=${var}">${var}</a></li>
+				</c:forEach>
+				<li>
+					<c:if test="${to.curPage < to.totalPage }">
+						<a href="/board/listpage?curPage=${to.curPage+1}">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</c:if> 
+				</li>
+				<li>
+					<c:if test="${(to.curPage+10)-(to.curPage%10==0?10:to.curPage%10) < to.totalPage }">
+						<a href="/board/listpage?curPage=${(to.curPage+10)-(to.curPage%10==0?10:to.curPage%10)+1}">
+							<span class="glyphicon glyphicon-forward"></span>
+						</a>
+					</c:if>
+				</li>
+			</ul>
+		</div>
+	</div>				
+	<div class="row">
+		<a href="/member/insert">회원등록</a>
+	</div>
+	<!-- class = row  -->	
+	</div>        
+    <!-- class = container  -->    
       
 
         <!-- Start Footer Area -->
