@@ -34,10 +34,8 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	
-	
 	<context:component-scan base-package="ca.project.Persistence"/>
 	<context:component-scan base-package="ca.project.Service"/>
-		
 		
 	<aop:config></aop:config>
 	

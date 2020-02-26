@@ -22,7 +22,8 @@ public class MemberController {
 	
 	
 	@RequestMapping(value = "insert", method = RequestMethod.GET)
-	public void insertui() {
+	public String insertui() {
+		return "member/member_insert";
 	}
 	
 	@RequestMapping(value = "insert", method = RequestMethod.POST)
@@ -44,23 +45,24 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "list", method = RequestMethod.GET)
-	public void list(PageTO to, Model model) {
+	public String list(PageTO to, Model model) {
 		to = member_service.list(to);
 		model.addAttribute("to", to);
+		return "member/member_list";
 	}
 	
 	@RequestMapping(value = "read/{mem_id}", method = RequestMethod.GET)
 	public String read(@PathVariable("mem_id") String mem_id, Model model) {
 		MemberDTO dto = member_service.read(mem_id);
 		model.addAttribute("dto", dto);
-		return "member/read";
+		return "member/member_read";
 	}
 	
 	@RequestMapping(value = "update/{mem_id}", method = RequestMethod.GET)
 	public String updateui(@PathVariable("mem_id") String mem_id, Model model) {
 		MemberDTO dto = member_service.read(mem_id);
 		model.addAttribute("dto", dto);
-		return "member/update";
+		return "member/member_update";
 	}
 	
 	@RequestMapping(value = "update", method = RequestMethod.POST)
