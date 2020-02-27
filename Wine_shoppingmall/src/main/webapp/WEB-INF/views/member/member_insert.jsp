@@ -106,8 +106,6 @@
                                     <div class="contact-box subject">
                                     	<label for="contact">CONTACT</label>
                                         <input required style="width:100%;" id="contact" type="text" name="mem_contact" onKeyup="inputPhoneNumber(this);" maxlength="13" placeholder="010-0000-0000">
-                                        
-                                        
                                     </div>
                                 </div>
                                 <div class="single-contact-form">
