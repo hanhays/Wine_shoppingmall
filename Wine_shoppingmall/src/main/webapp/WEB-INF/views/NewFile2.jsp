@@ -170,111 +170,176 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="bradcaump__inner">
-                            	<h1>title</h1>
+                            	<h1>Member List</h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Bradcaump area --> 
+        <!-- End Bradcaump area -->
+        
+        
+        
+        
+        
+        
+	<!-- class = container  -->
+	<div class="container">
+	<form role="form" action="/member/insert" method="post">
+		<div class="row">
+		<table class="table table-bordered" style="text-align: center; border: 1px solid #dddddd">
+			<thead>
+				<tr>
+					<th colspan="3" style="background-color: #eeeeee; text-align: center;">
+						<h5>JOIN US</h5>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="width: 20%;">아이디</td>
+					<td style="text-align: left;">
+						<input required style="width:100px;" type="text" id="id" name="mem_id">
+               			<span id="idmsg"></span>(영문대소문자/숫자,4~16자)
+               			<button id="idcheck" class="btn btn-danger btn-xs">중복확인</button>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">비밀번호</td>
+					<td style="text-align: left;">
+						<input required style="width:100px;" class="form-control" type="password" id="pw" name="mem_pw">
+            			<span id="pwmsg"></span>(영문 대소문자/숫자 중 2가지 이상 조합, 4~10자)
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">비밀번호 확인</td>
+					<td style="text-align: left;">
+						<input required type="password" id="pwck" name="pwcheck">
+						<span id="pwcheckmsg"></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">이름</td>
+					<td style="text-align: left;">
+						<input required type="text" id="name" name="mem_name">
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">성별</td>
+					<td style="text-align: left;">
+						<input required type="radio" id="gender" name="mem_gender" value="m" checked>남성
+						<input required type="radio" id="gender" name="mem_gender" value="f">여성
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">연락처</td>
+					<td style="text-align: left;">
+						<input required type="text" id="contact" name="mem_contact">
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 20%;">생년월일</td>
+					<td style="text-align: left;">
+						<input required type="date" id="birth" name="mem_birth">
+					</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<button id="submit" type="submit" class="btn btn-danger">회원등록</button>
+			</div>
+		</div>
+	</form>
+	</div>
+    <!-- class = container  -->        
+        
+        
+        
+        
+ 
+        
+        
+        
+        
+        
+         
         <!-- cart-main-area start -->
         <div class="cart-main-area ptb--100 bg__white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <form action="#">               
                             <div class="table-content table-responsive">
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th class="product-thumbnail">가입일</th>
+                                            <th class="product-name">가입일</th>
                                             <th class="product-name">아이디</th>
-                                            <th class="product-price">이름</th>
-                                            <th class="product-quantity">성별</th>
-                                            <th class="product-subtotal">연락처</th>
-                                            <th class="product-remove">생년월일</th>
+                                            <th class="product-name">이름</th>
+                                            <th class="product-name">성별</th>
+                                            <th class="product-name">연락처</th>
+                                            <th class="product-name">생년월일</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     	<c:forEach items="${to.list}" var="dto">
                                         <tr>
-                                            <td class="product-thumbnail">${dto.mem_regdate}</td>
-                                            <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_id}</a></td>
-                                            <td class="product-price"><span class="amount">${dto.mem_contact}</span></td>
-                                            <td class="product-quantity">${dto.mem_gender}</td>
-                                            <td class="product-subtotal">${dto.mem_contact}</td>
-                                            <td class="product-remove">${dto.mem_birth}</td>
+                                            <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_regdate}</a></td>
+                                            <td class="product-name">${dto.mem_id}</td>
+                                            <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_name}</a></td>
+                                            <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_gender}</a></td>
+                                            <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_contact}</a></td>
+                                            <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_birth}</a></td>
                                         </tr>
                                         </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
+						    <!-- class = row  -->		
+							<div class="row">
+								<div class="text-center">
+									<ul class="htc__pagenation">
+										<li>
+											<c:if test="${to.curPage-1 >= 1 }">
+												<a href="/member/list?curPage=${to.curPage-1}">
+													<i class="zmdi zmdi-chevron-left"></i>
+												</a>
+											</c:if>
+										</li>
+										<c:forEach begin="${to.beginPageNum}" end="${to.stopPageNum}" var="var">
+											<li class="${to.curPage == var?'active':''}"><a href="/member/list?curPage=${var}">${var}</a></li>
+										</c:forEach>
+										<li>
+											<c:if test="${to.curPage < to.totalPage }">
+												<a href="/member/list?curPage=${to.curPage+1}">
+													<i class="zmdi zmdi-chevron-right"></i>
+												</a>
+											</c:if> 
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- class = row  -->
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="buttons-cart--inner">
                                         <div class="buttons-cart">
-                                            <a href="#">Continue Shopping</a>
+                                            <a href="/member/insert">REGISTE</a>
                                         </div>
                                         <div class="buttons-cart checkout--btn">
-                                            <a href="#">update</a>
-                                            <a href="#">checkout</a>
+                                            <a href="/">BACK</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="ht__coupon__code">
-                                        <span>enter your discount code</span>
-                                        <div class="coupon__box">
-                                            <input type="text" placeholder="">
-                                            <div class="ht__cp__btn">
-                                                <a href="#">enter</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12 smt-40 xmt-40">
-                                    <div class="htc__cart__total">
-                                        <h6>cart total</h6>
-                                        <div class="cart__desk__list">
-                                            <ul class="cart__desc">
-                                                <li>cart total</li>
-                                                <li>tax</li>
-                                                <li>shipping</li>
-                                            </ul>
-                                            <ul class="cart__price">
-                                                <li>$909.00</li>
-                                                <li>$9.00</li>
-                                                <li>0</li>
-                                            </ul>
-                                        </div>
-                                        <div class="cart__total">
-                                            <span>order total</span>
-                                            <span>$918.00</span>
-                                        </div>
-                                        <ul class="payment__btn">
-                                            <li class="active"><a href="#">payment</a></li>
-                                            <li><a href="#">continue shopping</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </form> 
                     </div>
                 </div>
             </div>
         </div>
-        <!-- cart-main-area end -->
-
-
-
-
-
-
-  
-      
+        <!-- cart-main-area end -->               
 
         <!-- Start Footer Area -->
         <footer id="htc__footer">
@@ -402,6 +467,84 @@
     <script src="/resources/js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="/resources/js/main.js"></script>
-
+    
+<script type="text/javascript">
+   $(document).ready(function() {
+      var ckid = '0';
+      var ckpw = '0';
+      var ckpwck = '0';
+      $("#idcheck").click(function() {
+         var ida = $("input[name='mem_id']").val();
+         var limit = /^[a-zA-Z0-9]{4,16}$/;
+         if (!limit.test(ida)) {
+            $("#idmsg").text("4이상 16이하 영문대소문자/숫자를 이용하세요.");
+            $("#idmsg").css("color", "red");
+            ckpw = '0';
+         } else {
+            $.ajax({
+               type : 'get',
+               url : '/member/checkid',
+               data : {
+                  id : ida
+               },
+               dataType : 'text',
+               success : function(result) {
+                  if (result == "1") {
+                     $("#idmsg").text("사용 가능한 아이디 입니다.");
+                     $("#idmsg").css("color", "blue");
+                     ckid = '1';
+                  } else if (result == "0") {
+                     $("#idmsg").text("사용할 수 없는 아이디 입니다.");
+                     $("#idmsg").css("color", "red");
+                     ckid = '0';
+                  }
+               }
+            });
+         }
+         return false;
+      });
+      $("#id").keydown(function() {
+         ckid = '0';
+         $("#idmsg").text("");
+      });
+      $("input[name='mem_pw']").change(function() {
+         var pw = $("input[name='mem_pw']").val();
+         var limit = /^[a-zA-Z0-9]{4,10}$/;
+         if (!limit.test(pw)) {
+            $("#pwmsg").text("4이상 10이하 영문대소문자/숫자를 이용하세요.");
+            $("#pwmsg").css("color", "red");
+            ckpw = '0';
+         } else {
+            $("#pwmsg").text("");
+            ckpw = '1';
+         }
+      });
+      $("input[name='pwcheck']").change(function() {
+         var pw = $("input[name='mem_pw']").val();
+         var pwcheck = $("input[name='pwcheck']").val();
+         if (pw != pwcheck) {
+            $("#pwcheckmsg").text("비밀번호가 일치하지 않습니다.");
+            $("#pwcheckmsg").css("color", "red");
+            ckpwck = '0';
+         } else {
+            $("#pwcheckmsg").text("비밀번호가 일치합니다.");
+            $("#pwcheckmsg").css("color", "blue");
+            ckpwck = '1';
+         }
+      });
+      $("#submit").click(function() {
+         if (ckid != '1') {
+            alert("아이디 중복 확인을 해주세요.");
+         } else if (ckpw != '1') {
+            alert("사용 가능한 비밀번호를 입력하시오.");
+         } else if (ckpwck != '1') {
+            alert("비밀번호가 일치하지 않습니다.");
+         } else if(confirm("회원등록하시겠습니까?") == true){
+        	 return true;
+         }
+		return false;
+      });
+   });
+</script>
 </body>
 </html>
