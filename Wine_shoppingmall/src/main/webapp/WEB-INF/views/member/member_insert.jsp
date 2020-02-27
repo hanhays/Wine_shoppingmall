@@ -36,326 +36,103 @@
     <script src="/resources/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
-    <!-- Body main wrapper start -->
-    <div class="wrapper">
-        <!-- Start Header Style -->
-        <header id="htc__header" class="htc__header__area header--one">
-            <!-- Start Mainmenu Area -->
-            <div id="sticky-header-with-topbar" class="mainmenu__wrap sticky__header">
-                <div class="container">
-                    <div class="row">
-                        <div class="menumenu__container clearfix">
-                            <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"> 
-                                <div class="logo">
-                                     <a href="/"><img src="/resources/images/logo/4.png" alt="logo images"></a>
-                                </div>
-                            </div>
-                            <div class="col-md-7 col-lg-8 col-sm-5 col-xs-3">
-                                <nav class="main__menu__nav hidden-xs hidden-sm">
-                                    <ul class="main__menu">
-                                        <li><a href="#">WINE</a></li>
-                                        <li><a href="/member/list">MEMBER</a></li>
-                                        <li class="drop"><a href="#">BOARD</a>
-                                            <ul class="dropdown">
-                                                <li><a href="blog.html">REVIEW</a></li>
-                                                <li><a href="blog-details.html">Q&A</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">LOGIN</a></li>
-                                        <li><a href="#">LOGOUT</a></li>
-                                        <li><a href="/member/insert">JOIN US</a></li>
-                                        <li><a href="#">MY PAGE</a></li>
-                                        <li><a href="#">CONTACT</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <div class="col-md-3 col-lg-2 col-sm-4 col-xs-4">
-                                <div class="header__right">
-                                    <div class="header__search search search__open">
-                                        <a href="#"><i class="icon-magnifier icons"></i></a>
-                                    </div>
-                                    <div class="header__account">
-                                        <a href="#"><i class="icon-user icons"></i></a>
-                                    </div>
-                                    <div class="htc__shopping__cart">
-                                        <a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
-                                        <a href="#"><span class="htc__qua">2</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Mainmenu Area -->
-        </header>
-        <!-- End Header Area -->
+<!-- Body main wrapper start -->
+<div class="wrapper">   
+<%@ include file="/resources/header.jsp" %>    
         
-        <div class="body__overlay"></div>
-        <!-- Start Offset Wrapper -->
-        <div class="offset__wrapper">
-            <!-- Start Search Popap -->
-            <div class="search__area">
-                <div class="container" >
-                    <div class="row" >
-                        <div class="col-md-12" >
-                            <div class="search__inner">
-                                <form action="#" method="get">
-                                    <input placeholder="Search..." type="text">
-                                    <button type="submit"></button>
-                                </form>
-                                <div class="search__close__btn">
-                                    <span class="search__close__btn_icon"><i class="zmdi zmdi-close"></i></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Search Popap -->
-            <!-- Start Cart Panel -->
-            <div class="shopping__cart">
-                <div class="shopping__cart__inner">
-                    <div class="offsetmenu__close__btn">
-                        <a href="#"><i class="zmdi zmdi-close"></i></a>
-                    </div>
-                    <div class="shp__cart__wrap">
-                        <div class="shp__single__product">
-                            <div class="shp__pro__thumb">
-                                <a href="#">
-                                    <img src="images/product-2/sm-smg/1.jpg" alt="product images">
-                                </a>
-                            </div>
-                            <div class="shp__pro__details">
-                                <h2><a href="product-details.html">BO&Play Wireless Speaker</a></h2>
-                                <span class="quantity">QTY: 1</span>
-                                <span class="shp__price">$105.00</span>
-                            </div>
-                            <div class="remove__btn">
-                                <a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
-                            </div>
-                        </div>
-                        <div class="shp__single__product">
-                            <div class="shp__pro__thumb">
-                                <a href="#">
-                                    <img src="images/product-2/sm-smg/2.jpg" alt="product images">
-                                </a>
-                            </div>
-                            <div class="shp__pro__details">
-                                <h2><a href="product-details.html">Brone Candle</a></h2>
-                                <span class="quantity">QTY: 1</span>
-                                <span class="shp__price">$25.00</span>
-                            </div>
-                            <div class="remove__btn">
-                                <a href="#" title="Remove this item"><i class="zmdi zmdi-close"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="shoping__total">
-                        <li class="subtotal">Subtotal:</li>
-                        <li class="total__price">$130.00</li>
-                    </ul>
-                    <ul class="shopping__btn">
-                        <li><a href="cart.html">View Cart</a></li>
-                        <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End Cart Panel -->
-        </div>
-        <!-- End Offset Wrapper -->
-  
-	<div class="container">
-	<div class="page-header">
-		<h1></h1>
-	</div>
-	<form role="form" action="/member/insert" method="post">
-		<div class="row">
-		<table class="table table-bordered" style="text-align: center; border: 1px solid #dddddd">
-			<thead>
-				<tr>
-					<th colspan="3" style="background-color: #eeeeee; text-align: center;">
-						<h5>JOIN US</h5>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="width: 20%;">아이디</td>
-					<td style="text-align: left;">
-						<input required style="width:100px;" type="text" id="id" name="mem_id">
-               			<span id="idmsg"></span>(영문대소문자/숫자,4~16자)
-               			<button id="idcheck" class="btn btn-danger btn-xs">중복확인</button>
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 20%;">비밀번호</td>
-					<td style="text-align: left;">
-						<input required style="width:100px;" class="form-control" type="password" id="pw" name="mem_pw">
-            			<span id="pwmsg"></span>(영문 대소문자/숫자 중 2가지 이상 조합, 4~10자)
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 20%;">비밀번호 확인</td>
-					<td style="text-align: left;">
-						<input required type="password" id="pwck" name="pwcheck">
-						<span id="pwcheckmsg"></span>
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 20%;">이름</td>
-					<td style="text-align: left;">
-						<input required type="text" id="name" name="mem_name">
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 20%;">성별</td>
-					<td style="text-align: left;">
-						<input required type="radio" id="gender" name="mem_gender" value="m" checked>남성
-						<input required type="radio" id="gender" name="mem_gender" value="f">여성
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 20%;">연락처</td>
-					<td style="text-align: left;">
-						<input required type="text" id="contact" name="mem_contact">
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 20%;">생년월일</td>
-					<td style="text-align: left;">
-						<input required type="date" id="birth" name="mem_birth">
-					</td>
-				</tr>
-				
-			</tbody>
-		</table>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<button id="submit" type="submit" class="btn btn-danger">회원등록</button>
-			</div>
-		</div>
-	</form>
-	</div>
-    <!-- class = container  -->   
-
-
-        <!-- Start Footer Area -->
-        <footer id="htc__footer">
-            <!-- Start Footer Widget -->
-            <div class="footer__container bg__cat--1">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start Single Footer Widget -->
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="footer">
-                                <h2 class="title__line--2">ABOUT US</h2>
-                                <div class="ft__details">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-                                    <div class="ft__social__link">
-                                        <ul class="social__link">
-                                            <li><a href="#"><i class="icon-social-twitter icons"></i></a></li>
-
-                                            <li><a href="#"><i class="icon-social-instagram icons"></i></a></li>
-
-                                            <li><a href="#"><i class="icon-social-facebook icons"></i></a></li>
-
-                                            <li><a href="#"><i class="icon-social-google icons"></i></a></li>
-
-                                            <li><a href="#"><i class="icon-social-linkedin icons"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Footer Widget -->
-                        <!-- Start Single Footer Widget -->
-                        <div class="col-md-2 col-sm-6 col-xs-12 xmt-40">
-                            <div class="footer">
-                                <h2 class="title__line--2">information</h2>
-                                <div class="ft__inner">
-                                    <ul class="ft__list">
-                                        <li><a href="#">About us</a></li>
-                                        <li><a href="#">Delivery Information</a></li>
-                                        <li><a href="#">Privacy & Policy</a></li>
-                                        <li><a href="#">Terms  & Condition</a></li>
-                                        <li><a href="#">Manufactures</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Footer Widget -->
-                        <!-- Start Single Footer Widget -->
-                        <div class="col-md-2 col-sm-6 col-xs-12 xmt-40 smt-40">
-                            <div class="footer">
-                                <h2 class="title__line--2">my account</h2>
-                                <div class="ft__inner">
-                                    <ul class="ft__list">
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="cart.html">My Cart</a></li>
-                                        <li><a href="#">Login</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Footer Widget -->
-                        <!-- Start Single Footer Widget -->
-                        <div class="col-md-2 col-sm-6 col-xs-12 xmt-40 smt-40">
-                            <div class="footer">
-                                <h2 class="title__line--2">Our service</h2>
-                                <div class="ft__inner">
-                                    <ul class="ft__list">
-                                        <li><a href="#">My Account</a></li>
-                                        <li><a href="cart.html">My Cart</a></li>
-                                        <li><a href="#">Login</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Footer Widget -->
-                        <!-- Start Single Footer Widget -->
-                        <div class="col-md-3 col-sm-6 col-xs-12 xmt-40 smt-40">
-                            <div class="footer">
-                                <h2 class="title__line--2">NEWSLETTER </h2>
-                                <div class="ft__inner">
-                                    <div class="news__input">
-                                        <input type="text" placeholder="Your Mail*">
-                                        <div class="send__btn">
-                                            <a class="fr__btn" href="#">Send Mail</a>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Footer Widget -->
-                    </div>
-                </div>
-            </div>
-            <!-- End Footer Widget -->
-            <!-- Start Copyright Area -->
-            <div class="htc__copyright bg__cat--5">
+	    <!-- Start Bradcaump area -->
+        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/resources/images/bg/3.jpg) no-repeat scroll center center / cover ;">
+            <div class="ht__bradcaump__wrap">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="copyright__inner">
-                                <p>Copyright© <a href="https://freethemescloud.com/">Free themes Cloud</a> 2018. All right reserved.</p>
-                                <a href="#"><img src="images/others/shape/paypol.png" alt="payment images"></a>
+                            <div class="bradcaump__inner">
+                            	<h1 style="color:white;"></h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Copyright Area -->
-        </footer>
-        <!-- End Footer Style -->
-    </div>
-    <!-- Body main wrapper end -->
+        </div>
+        <!-- End Bradcaump area -->
+        
+        	<!-- class = container  -->
+			<div class="container">
+                <div class="row">
+                    <div class="contact-form-wrap mt--60">
+                        <div class="col-xs-12">
+                            <div class="contact-title">
+                                <h1 class="title__line--6" style="text-align:center">JOIN US</h1>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <form id="contact-form" action="/member/insert" method="post">
+                                <div class="single-contact-form">
+                                    <div class="contact-box subject">
+                                    	<label for="id">ID</label>
+                                        <input required id="id" type="text" name="mem_id" placeholder="Enter Your ID">
+                                        <span id="idmsg"></span>(영문대소문자/숫자,4~16자)
+				               			<button id="idcheck" class="btn btn-danger btn-xs">ID CHECK</button>
+                                    </div>
+                                </div>
+                                <div class="single-contact-form">
+                                    <div class="contact-box subject">
+                                    	<label for="pw">PASSWORD</label>
+                                        <input required id="pw" type="password" name="mem_pw" placeholder="Enter Your PASSWORD">
+                                        <span id="pwmsg"></span>(영문 대소문자/숫자 중 2가지 이상 조합, 4~10자)
+                                    </div>
+                                </div>
+                                <div class="single-contact-form">
+                                    <div class="contact-box subject">
+                                    	<label for="pwck">PASSWORD CHECK</label>
+                                        <input required id="pwck" type="password" name="pwcheck" placeholder="Enter Your PASSWORD CHECK">
+                                        <span id="pwcheckmsg"></span>
+                                    </div>
+                                </div>
+                                <div class="single-contact-form">
+                                    <div class="contact-box subject">
+                                    	<label for="name">NAME</label>
+                                        <input required id="name" type="text" name="mem_name" placeholder="Enter Your NAME">
+                                    </div>
+                                </div>
+                                <div class="single-contact-form">
+                                    <div class="contact-box subject">
+                                    	<label style="width:100%;" for="gender">GENDER</label>
+                                        <input required style="width:10%;" id="gender" type="radio" name="mem_gender" value="m" checked>MAIL
+                                        <input required style="width:10%;" id="gender" type="radio" name="mem_gender" value="f">FEMAIL
+                                    </div>
+                                </div>
+                                <div class="single-contact-form">
+                                    <div class="contact-box subject">
+                                    	<label for="contact">CONTACT</label>
+                                        <input required style="width:100%;" id="contact" type="text" name="mem_contact" onKeyup="inputPhoneNumber(this);" maxlength="13" placeholder="010-0000-0000">
+                                        
+                                        
+                                    </div>
+                                </div>
+                                <div class="single-contact-form">
+                                    <div class="contact-box subject">
+                                    	<label style="width:100%;" for="birth">BIRTH</label>
+                                        <input required style="width:20%;" id="birth" type="date" name="mem_birth">
+                                    </div>
+                                </div>
+                                <div class="contact-btn">
+                                    <button id="submit" type="submit" class="fv-btn">REGISTE</button>
+                                </div>
+                            </form>
+                            <div class="form-output">
+                                <p class="form-messege"></p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>    
+        	</div>
+        	<!-- class = container  -->
+        
+
+<%@ include file="/resources/footer.jsp" %> 
+</div>
+<!-- Body main wrapper end -->
 
     <!-- Placed js at the end of the document so the pages load faster -->
 
@@ -371,6 +148,7 @@
     <script src="/resources/js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="/resources/js/main.js"></script>
+    
 <script type="text/javascript">
    $(document).ready(function() {
       var ckid = '0';
@@ -448,6 +226,33 @@
 		return false;
       });
    });
+   
+   
+function inputPhoneNumber(obj) {
+    var number = obj.value.replace(/[^0-9]/g, "");
+    var phone = "";
+    if(number.length < 4) {
+        return number;
+    } else if(number.length < 7) {
+        phone += number.substr(0, 3);
+        phone += "-";
+        phone += number.substr(3);
+    } else if(number.length < 11) {
+        phone += number.substr(0, 3);
+        phone += "-";
+        phone += number.substr(3, 3);
+        phone += "-";
+        phone += number.substr(6);
+    } else {
+        phone += number.substr(0, 3);
+        phone += "-";
+        phone += number.substr(3, 4);
+        phone += "-";
+        phone += number.substr(7);
+    }
+    obj.value = phone;
+}
 </script>
+
 </body>
 </html>
