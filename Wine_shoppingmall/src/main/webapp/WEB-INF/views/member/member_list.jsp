@@ -40,7 +40,6 @@
 <div class="wrapper">   
 <%@ include file="/resources/header.jsp" %>    
         
-        
 	    <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(/resources/images/bg/2.jpg) no-repeat scroll center center / cover ;">
             <div class="ht__bradcaump__wrap">
@@ -55,7 +54,9 @@
                 </div>
             </div>
         </div>
-        <!-- End Bradcaump area --> 
+        <!-- End Bradcaump area -->
+
+         
         <!-- cart-main-area start -->
         <div class="cart-main-area ptb--100 bg__white">
             <div class="container">
@@ -82,7 +83,7 @@
                                     	<c:forEach items="${to.list}" var="dto">
                                         <tr>
                                             <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_regdate}</a></td>
-                                            <td class="product-name" style="font-size: 200%; font-weight: bold;">${dto.mem_id}</td>
+                                            <td class="product-name" style="font-size: 150%; font-weight: bold;">${dto.mem_id}</td>
                                             <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_name}</a></td>
                                             <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_gender}</a></td>
                                             <td class="product-name"><a href="/member/read/${dto.mem_id}">${dto.mem_contact}</a></td>

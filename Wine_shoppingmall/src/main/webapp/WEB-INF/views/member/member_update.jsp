@@ -56,105 +56,116 @@
         </div>
         <!-- End Bradcaump area -->
         
-        	<!-- class = container  -->
-			<div class="container">
-                <div class="row">
-                    <div class="contact-form-wrap mt--60">
-                        <div class="col-xs-12">
-                            <div class="contact-title">
-                                <h1 class="title__line--6" style="text-align:center">UPDATE</h1>
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <form id="contact-form" action="/member/update" method="post">
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="id">ID</label>
-                                    	<input readonly style="width:50%;" id="id" type="text" name="mem_id" value="${dto.mem_id}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="pw">PASSWORD</label>
-                                        <input required style="width:50%;" id="pw" type="password" name="mem_pw" placeholder="Enter Your PASSWORD">
-                                        <span id="pwmsg"></span>(영문 대소문자/숫자 중 2가지 이상 조합, 4~10자)
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="pwck">PASSWORD CHECK</label>
-                                        <input required style="width:50%;" id="pwck" type="password" name="pwcheck" placeholder="Enter Your PASSWORD CHECK">
-                                        <span id="pwcheckmsg"></span>
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="name">NAME</label>
-                                        <input required style="width:50%;" id="name" type="text" name="mem_name" value="${dto.mem_name}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="gender">GENDER</label>
-                                        <input required style="width:10%;" id="gender" type="radio" name="mem_gender" value="m" checked>MAIL
-                                        <input required style="width:10%;" id="gender" type="radio" name="mem_gender" value="f">FEMAIL
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="contact">CONTACT</label>
-                                        <input required style="width:50%;" id="contact" type="text" name="mem_contact" onKeyup="inputPhoneNumber(this);" maxlength="13"  value="${dto.mem_contact}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="email">E-MAIL</label>
-                                        <input style="width:50%;" id="email" type="email" name="mem_email" value="${dto.mem_email}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="add1">POSTAL CODE</label>
-                                        <input style="width:50%;" id="add1" type="text" name="mem_address1" value="${dto.mem_address1}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="add2">ADDRESS 1</label>
-                                        <input style="width:50%;" id="add2" type="text" name="mem_address2" value="${dto.mem_address2}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="add3">ADDRESS 2</label>
-                                        <input style="width:50%;" id="add3" type="text" name="mem_address3" value="${dto.mem_address3}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="birth">BIRTH DAY</label>
-                                        <input readonly style="width:50%;" id="birth" type="text" name="mem_birth" value="${dto.mem_birth}">
-                                    </div>
-                                </div>
-                                <div class="single-contact-form">
-                                    <div class="contact-box subject">
-                                    	<label style="width:100%;" for="regdate">REGISTE DATE</label>
-                                        <input readonly style="width:50%;" id="regdate" type="text" name="mem_regdate" value="${dto.mem_regdate}">
-                                    </div>
-                                </div>
-                                <div class="contact-btn">
-                                    <button id="submit" type="submit" class="fv-btn">UPDATE</button>
-                                </div>
-                            </form>
-                            <div class="form-output">
-                                <p class="form-messege"></p>
-                            </div>
-                        </div>
-                    </div> 
-                </div>    
-        	</div>
-        	<!-- class = container  -->
-        
+        <!-- class = container  -->
+		<div class="container">
+			<div class="row">
+				<div class="contact-form-wrap mt--60">
+					<div class="col-xs-12">
+						<div class="contact-title">
+							<h1 class="title__line--6" style="text-align: center">UPDATE</h1>
+						</div>
+					</div>
+					<div class="accordion__body">
+						<div class="col-xs-12">
+							<div class="col-xs-2"></div>
+							<form id="contact-form" action="/member/update" method="post">
+								<div class="col-xs-4">
+									<div class="checkout-method__login">
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="id">ID</label>
+												<input readonly id="id" type="text" name="mem_id" value="${dto.mem_id}">
+											</div>
+										</div>
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="pw">PASSWORD</label>
+												<input required id="pw" type="password" name="mem_pw">
+												<span id="pwmsg"></span>(영문대소문자/숫자 중 2가지 이상 조합, 4~10자)
+											</div>
+										</div>
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="pwck">PASSWORD CHECK</label>
+												<input required id="pwck" type="password" name="pwcheck">
+												<span id="pwcheckmsg"></span>
+											</div>
+										</div>
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="name">NAME</label>
+												<input required id="name" type="text" name="mem_name" value="${dto.mem_name}">
+											</div>
+										</div>
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="gender">GENDER</label><br>&emsp;&emsp;&emsp;&emsp;
+												<input required id="gender" type="radio" name="mem_gender" value="m" checked>Mail&emsp;&emsp;
+												<input required id="gender" type="radio" name="mem_gender" value="f">Femail
+											</div>
+										</div>
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="contact">PHONE NUMBER</label>
+												<input required id="contact" type="tel" name="mem_contact" onKeyup="inputPhoneNumber(this);" maxlength="13" placeholder="000-0000-0000" value="${dto.mem_contact}">
+											</div>
+										</div>
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="birth">BIRTH</label>
+												<input readonly id="birth" type="text" name="mem_birth" value="${dto.mem_birth}">
+											</div>
+										</div>
+										<div class="single-input">
+											<div class="contact-box subject">
+												<label for="regdate">REGISTE DATE</label>
+												<input readonly id="regdate" type="text" name="mem_regdate" value="${dto.mem_regdate}">
+											</div>
+										</div>
+										<p class="require">* Required fields</p><br><br>
+									</div>
+									<div class="single-contact-form">
+										<div class="single-contact-form">
+											<div class="contact-box subject">
+												<label for="email">E-MAIL</label><br>
+												<input id="email" type="email" name="mem_email" value="${dto.mem_email}">
+											</div>
+										</div>
+										<div class="single-contact-form">
+											<div class="contact-box subject">
+												<label for="add1">POSTAL CODE</label><br>
+												<input id="add1" type="text" name="mem_address1" value="${dto.mem_address1}">
+											</div>
+										</div>
+										<div class="single-contact-form">
+											<div class="contact-box subject">
+												<label for="add2">ADDRESS 1</label><br>
+												<input id="add2" type="text" name="mem_address2" value="${dto.mem_address2}">
+											</div>
+										</div>
+										<div class="single-contact-form">
+											<div class="contact-box subject">
+												<label for="add3">ADDRESS 2</label><br>
+												<input id="add3" type="text" name="mem_address3" value="${dto.mem_address3}">
+											</div>
+										</div>
+										<div class="contact-btn">
+                                    		<button id="submit" type="submit" class="fv-btn">UPDATE</button>
+                                		</div>
+                                		<br><br><br><br><br><br><br><br>
+									</div>
+								</div>
+							</form>
+							<div class="col-xs-6"></div>
+							<div class="form-output">
+								<p class="form-messege"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- class = container  -->
 
 <%@ include file="/resources/footer.jsp" %> 
 </div>
