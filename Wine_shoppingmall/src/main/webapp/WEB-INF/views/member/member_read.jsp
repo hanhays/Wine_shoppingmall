@@ -65,55 +65,56 @@
 							<h1 class="title__line--6" style="text-align:center">MY PAGE</h1>
 						</div>
 					</div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="col-xs-2"></div>
+                    <div class="col-xs-8">
                             <div class="table-content table-responsive">
-                                <table style="font-size: 150%;">
+                                <table>
                                     <thead>
                                     </thead>
                                     <tbody>
 						 				<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">ID</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_id}</td>
+											<td style="font-weight: bold; width: 20%;">ID</td>
+											<td style="text-align: left;">${dto.mem_id}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">PASSWORD</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_pw}</td>
+											<td style="font-weight: bold; width: 20%;">PASSWORD</td>
+											<td style="text-align: left;">${dto.mem_pw}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">NAME</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_name}</td>
+											<td style="font-weight: bold; width: 20%;">NAME</td>
+											<td style="text-align: left;">${dto.mem_name}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">GENDER</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_gender}</td>
+											<td style="font-weight: bold; width: 20%;">GENDER</td>
+											<td style="text-align: left;">${dto.mem_gender}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">CONTACT</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_contact}</td>
+											<td style="font-weight: bold; width: 20%;">CONTACT</td>
+											<td style="text-align: left;">${dto.mem_contact}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">E-MAIL</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_email}</td>
+											<td style="font-weight: bold; width: 20%;">E-MAIL</td>
+											<td style="text-align: left;">${dto.mem_email}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">POSTAL CODE</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_address1}</td>
+											<td style="font-weight: bold; width: 20%;">POSTAL CODE</td>
+											<td style="text-align: left;">${dto.mem_address1}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">ADDRESS 1</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_address2}</td>
+											<td style="font-weight: bold; width: 20%;">ADDRESS 1</td>
+											<td style="text-align: left;">${dto.mem_address2}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">ADDRESS 2</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_address3}</td>
+											<td style="font-weight: bold; width: 20%;">ADDRESS 2</td>
+											<td style="text-align: left;">${dto.mem_address3}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">BIRTH DAY</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_birth}</td>
+											<td style="font-weight: bold; width: 20%;">BIRTH DAY</td>
+											<td style="text-align: left;">${dto.mem_birth}</td>
 										</tr>
 										<tr>
-											<td style="font-size: 100%; font-weight: bold; width: 20%;">REGISTE DATE</td>
-											<td style="font-size: 100%; text-align: left;">${dto.mem_regdate}</td>
+											<td style="font-weight: bold; width: 20%;">REGISTE DATE</td>
+											<td style="text-align: left;">${dto.mem_regdate}</td>
 										</tr>
                                     </tbody>
                                 </table>
@@ -121,7 +122,7 @@
 
 							<!-- class = row  -->
                             <div class="row">
-                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-xs-12">
                                     <div class="buttons-cart--inner">
                                         <div class="buttons-cart">
                                             <a href="/member/list">BACK TO LIST</a>
@@ -134,6 +135,7 @@
                                 </div>
                             </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

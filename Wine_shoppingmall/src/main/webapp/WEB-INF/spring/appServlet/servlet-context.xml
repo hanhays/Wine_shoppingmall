@@ -24,5 +24,6 @@
 	<context:component-scan base-package="ca.project.wine" />
 	<context:component-scan base-package="ca.project.Controller" />
 	
+
 	
 </beans:beans>

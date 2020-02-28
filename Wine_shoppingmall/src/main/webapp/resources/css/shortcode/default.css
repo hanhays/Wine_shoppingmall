@@ -83,7 +83,7 @@ html {
     }
 }
 body {
-    font-family: 'Old Standard TT', serif;
+  font-family: 'Poppins', sans-serif;
     color: #666666;
     font-weight: 400;
     font-size: 14px;
@@ -92,7 +92,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 p{
-    font-family: 'Old Standard TT', serif;
+    font-family: 'Poppins', serif;
     color: #666666;
     font-weight: 400;
     font-size: 16px;
@@ -474,8 +474,6 @@ body {
 --------------------------*/
 input[type=text],
 input[type=tel],
-input[type=radio],
-input[type=date],
 input[type=email],
 input[type=password]{
     width: 100%;

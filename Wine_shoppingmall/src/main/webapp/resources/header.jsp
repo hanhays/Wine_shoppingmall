@@ -26,8 +26,6 @@
                                                 <li><a href="#">Q&A</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">LOGIN</a></li>
-                                        <li><a href="#">LOGOUT</a></li>
                                         <li><a href="/member/insert">JOIN US</a></li>
                                         <li><a href="#">MY PAGE</a></li>
                                         <li><a href="#">CONTACT</a></li>
