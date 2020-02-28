@@ -1,0 +1,13 @@
+
+
+쇼핑몰데모사이트 (전체적인 구조 참조)
+http://ecudemo124261.cafe24.com/index.html
+
+
+와인 365 (상품자세히보기)
+http://www.wineoutlet365.com/wine/?p_url=wine_1_detail&w_code=W000084
+
+
+LCBO 해외 와인사이트 (외국 느낌 참조)
+https://www.lcbo.com/webapp/wcs/stores/servlet/en/lcbo
+
