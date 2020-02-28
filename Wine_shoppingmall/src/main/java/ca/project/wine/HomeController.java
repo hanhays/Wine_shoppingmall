@@ -14,4 +14,8 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping("contact")
+	public void contact() {		
+	}
+	
 }

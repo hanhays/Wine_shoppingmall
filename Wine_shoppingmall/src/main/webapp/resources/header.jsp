@@ -28,7 +28,7 @@
                                         </li>
                                         <li><a href="/member/insert">JOIN US</a></li>
                                         <li><a href="#">MY PAGE</a></li>
-                                        <li><a href="#">CONTACT</a></li>
+                                        <li><a href="/contact">CONTACT</a></li>
                                     </ul>
                                 </nav>
                             </div>
