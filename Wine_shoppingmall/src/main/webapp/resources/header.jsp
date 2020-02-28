@@ -22,8 +22,8 @@
                                         <li><a href="/member/list">MEMBER</a></li>
                                         <li class="drop"><a href="#">BOARD</a>
                                             <ul class="dropdown">
-                                                <li><a href="blog.html">REVIEW</a></li>
-                                                <li><a href="blog-details.html">Q&A</a></li>
+                                                <li><a href="#">REVIEW</a></li>
+                                                <li><a href="#">Q&A</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">LOGIN</a></li>
@@ -58,7 +58,7 @@
 
         <div class="body__overlay"></div>
         
-	<!-- Start Offset Wrapper -->
+		<!-- Start Offset Wrapper -->
         <div class="offset__wrapper">
           	<!-- Start Search Popap -->
             <div class="search__area">
@@ -90,11 +90,11 @@
                         <div class="shp__single__product">
                             <div class="shp__pro__thumb">
                                 <a href="#">
-                                    <img src="images/product-2/sm-smg/1.jpg" alt="product images">
+                                    <img src="/resources/images/product-2/sm-smg/1.jpg" alt="product images">
                                 </a>
                             </div>
                             <div class="shp__pro__details">
-                                <h2><a href="product-details.html">BO&Play Wireless Speaker</a></h2>
+                                <h2><a href="#">BO&Play Wireless Speaker</a></h2>
                                 <span class="quantity">QTY: 1</span>
                                 <span class="shp__price">$105.00</span>
                             </div>
@@ -105,7 +105,7 @@
                         <div class="shp__single__product">
                             <div class="shp__pro__thumb">
                                 <a href="#">
-                                    <img src="images/product-2/sm-smg/2.jpg" alt="product images">
+                                    <img src="/resources/images/product-2/sm-smg/2.jpg" alt="product images">
                                 </a>
                             </div>
                             <div class="shp__pro__details">
