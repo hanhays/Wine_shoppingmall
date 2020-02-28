@@ -36,7 +36,6 @@
     <script src="/resources/js/vendor/modernizr-3.5.0.min.js"></script>
 </head>
 <body>
- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     <!-- Body main wrapper start -->
     <div class="wrapper">
         <!-- Start Header Style -->
