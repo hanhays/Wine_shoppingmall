@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>   
 
 <!-- Start Header Style -->
         <header id="htc__header" class="htc__header__area header--one">
@@ -26,8 +26,41 @@
                                                 <li><a href="#">Q&A</a></li>
                                             </ul>
                                         </li>
+                                         <c:choose>
+                                        	<c:when test="${empty login}">
+                                        		<li><a data-toggle="modal" href="#myModal1">LOGIN</a></li>
+                                        	</c:when>
+                                        	<c:otherwise>
+                                        		<li><a data-toggle="modal" href="#myModal2">LOGOUT</a></li>
+                                        			<div class="modal fade" id="myModal2" role="dialog">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																</div>
+																<div class="modal-body" style="text-align: center;">
+																	<br>
+																	<h3>로그아웃 하시겠습니까??</h3>
+																	<br>
+																	<a href="/member/logout" class="fr__btn">Yes</a>
+																	<br>
+																</div>
+																<div class="modal-footer"></div>
+															</div>
+														</div>
+													</div>
+                                        		
+                                        	</c:otherwise>
+                                        </c:choose>
                                         <li><a href="/member/insert">JOIN US</a></li>
-                                        <li><a href="#">MY PAGE</a></li>
+                                        <c:choose>
+                                        	<c:when test="${empty login}">
+                                        		<li><a data-toggle="modal" href="#myModal1">MY PAGE</a></li>
+                                        	</c:when>
+                                        	<c:otherwise>
+                                        		<li><a href="/member/read/${login.mem_id}">MY PAGE</a></li>
+                                        	</c:otherwise>
+                                        </c:choose>
                                         <li><a href="/contact">CONTACT</a></li>
                                     </ul>
                                 </nav>
@@ -37,9 +70,54 @@
                                     <div class="header__search search search__open">
                                         <a href="#"><i class="icon-magnifier icons"></i></a>
                                     </div>
-                                    <div class="header__account">
-                                        <a href="#"><i class="icon-user icons"></i></a>
-                                    </div>
+                                    <c:choose>
+                                    	<c:when test="${empty login}">
+                                    		<div class="header__account">
+                                        		<a data-toggle="modal" href="#myModal1"><i class="icon-user icons"></i></a>
+                                    		</div>
+                                    		<div class="modal fade" id="myModal1" role="dialog">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<button type="button" class="close" data-dismiss="modal">&times;</button>
+														</div>
+														<div class="modal-body" style="text-align: center;">
+															<br>
+															<h1>LOGIN</h1>
+															<br>
+															<div class="accordion__body">
+																<form id="contact-form" action="/member/login" method="post">
+																	<div class="col-xs-3"></div>
+																	<div class="col-xs-6">
+																		<div class="checkout-method__login">
+																			<div class="single-input">
+																				<div class="contact-box subject">
+																					<input required type="text" name="mem_id" placeholder="ID">
+																				</div>
+																			</div>
+																			<div class="single-input">
+																				<div class="contact-box subject">
+																					<input required type="password" name="mem_pw" placeholder="PASSWORD">
+																				</div>
+																			</div><br>
+																			<button id="submit" type="submit" class="fv-btn">LOGIN</button>
+																		</div>
+																	</div>
+																	<div class="col-xs-3"></div>
+																</form>
+															</div>
+														</div><br><br><br><br><br><br><br><br><br>
+														<div class="modal-footer"></div>
+													</div>
+												</div>
+											</div>
+                                    	</c:when>
+                                    	<c:otherwise>
+                                    		<div class="header__account">
+                                        		<a href="/member/read/${login.mem_id}"><i class="icon-user icons"></i></a>
+                                    		</div>
+                                    	</c:otherwise>
+                                    </c:choose>
                                     <div class="htc__shopping__cart">
                                         <a class="cart__menu" href="#"><i class="icon-handbag icons"></i></a>
                                         <a href="#"><span class="htc__qua">2</span></a>
