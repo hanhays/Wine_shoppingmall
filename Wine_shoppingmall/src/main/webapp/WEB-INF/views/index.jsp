@@ -59,7 +59,7 @@
                                         <li class="drop"><a href="#">BOARD</a>
                                             <ul class="dropdown">
                                                 <li><a href="blog.html">REVIEW</a></li>
-                                                <li><a href="blog-details.html">Q&A</a></li>
+                                                <li><a href="/qnaboard/list">Q&A</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">LOGIN</a></li>

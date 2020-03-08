@@ -15,6 +15,7 @@ public class PageTO {
 	private int stopPageNum;
 	
 	private List<MemberDTO> list;
+	private List<QNABoardDTO> qlist;
 	
 	private void process() {
 		totalPage = (amount-1)/perPage + 1;
@@ -120,7 +121,18 @@ public class PageTO {
 
 	public void setList(List<MemberDTO> list) {
 		this.list = list;
-	}	
+	}
+
+	public List<QNABoardDTO> getQlist() {
+		return qlist;
+	}
+
+	public void setQlist(List<QNABoardDTO> qlist) {
+		this.qlist = qlist;
+		process();
+	}
+	
+	
 	
 	
 	
