@@ -53,6 +53,7 @@
                                         	</c:otherwise>
                                         </c:choose>
                                         <li><a href="/member/insert">JOIN US</a></li>
+
                                         <c:choose>
                                         	<c:when test="${empty login}">
                                         		<li><a data-toggle="modal" href="#myModal1">MY PAGE</a></li>
@@ -61,6 +62,10 @@
                                         		<li><a href="/member/read/${login.mem_id}">MY PAGE</a></li>
                                         	</c:otherwise>
                                         </c:choose>
+
+                                        <li><a href="#">MY PAGE</a></li>
+                                        <li><a href="#">CART</a></li>
+
                                         <li><a href="/contact">CONTACT</a></li>
                                     </ul>
                                 </nav>

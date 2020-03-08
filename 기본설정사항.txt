@@ -1,0 +1,42 @@
+프로젝트 명
+Wine_shoppingmall
+
+
+기본패키지 명
+ca.project.wine
+
+
+패키지
+ca.project.Controller
+ca.project.Service
+ca.project.Persistence (DAO)
+ca.project.DTO
+	PageTO
+	MemberDTO
+	WineDTO
+	....
+
+뷰
+main.jsp
+...
+
+<mappers 폴더>
+테이블명 + Mapper.xml
+(tbl_제외, 앞글자 대문자)
+
+##############################################
+	각자 맡으신 DTO/VO, -.jsp 만드실때
+	본인 취향대로 이름 정하시고
+	정해지면 알려주세요
+##############################################
+	
+	DTO/VO 만드실때 
+	변수 순서 꼭!!! 테이블 순서에 맞춰서 만들거나
+	만들고 나서 순서 알려주세요.
+	순서 다르면 나중에 합칠때 사용자 생성자 순서 달라서
+	에러 납니다
+
+##############################################	
+
+
+

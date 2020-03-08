@@ -1,0 +1,162 @@
+
+
+윈도우 + r
+
+cmd 
+
+sqlplus system/sys1234
+
+create user wine identified by wine;
+
+grant connect, resource, dba to wine;
+
+conn wine/wine;
+
+show user  --> wine 확인
+
+commit;
+
+
+###############################################################
+
+    테이블 꼬여서 드랍안된다거나 뭐 잘 안되면 조원들 불러서 해결하세요. 
+   
+    기타 변경사항 의견 있으면 바로 알려주세요.
+
+###############################################################
+
+
+< 회원 테이블 생성 >
+
+CREATE TABLE tbl_member(
+mem_id varchar2(50) PRIMARY KEY,
+mem_pw varchar2(50) not null,
+mem_name varchar2(50) not null,
+mem_gender varchar2(5) not null,
+mem_contact varchar2(50) not null,
+mem_regdate date default sysdate,
+mem_birth date not null,
+mem_address1 varchar2(50),
+mem_address2 varchar2(50),
+mem_address3 varchar2(50),
+mem_email varchar2(50),
+mem_type number(2) default 0
+)
+
+
+< 와인 테이블 생성 >
+
+CREATE TABLE tbl_wine(
+wine_code varchar2(30) PRIMARY KEY,		
+wine_name varchar2(50) not null,
+wine_img varchar2(200) not null,	
+wine_type varchar2(30) not null,
+wine_price number(20) not null,
+wine_cost number(20) not null,
+wine_stock number(10) default 0,
+wine_regdate date default sysdate,
+wine_producer varchar2(30),
+wine_kind varchar2(30),
+wine_temp varchar2(10),
+wine_sugar varchar2(10),
+wine_body varchar2(10),
+wine_info varchar2(1000)
+);
+
+
+
+< 장바구니 테이블 생성 >
+
+CREATE TABLE tbl_cart(
+cart_no number(5) PRIMARY KEY,
+cart_memId varchar2(50),
+cart_wineCode varchar2(30),
+cart_amount number(5) default 0,
+cart_regdate date default sysdate,
+cart_status number(1) default 0,
+FOREIGN KEY (cart_memId) REFERENCES tbl_member(mem_id) ON DELETE CASCADE,
+FOREIGN KEY (cart_wineCode) REFERENCES tbl_wine(wine_code) ON DELETE CASCADE
+)				
+
+
+
+< 이용후기 게시판 테이블 생성 >
+
+CREATE TABLE tbl_reviewBoard(
+rb_no number(5) PRIMARY KEY,
+rb_cartNo number(5),
+rb_title varchar2(100) not null,
+rb_content varchar2(1000) not null,
+rb_regdate date default sysdate,
+rb_readcnt number(5) default 0,
+FOREIGN KEY (rb_cartNo) REFERENCES tbl_cart(cart_no) ON DELETE CASCADE
+)
+
+
+
+< 이용후기 댓글 테이블 생성 >
+
+CREATE TABLE tbl_reviewBoardReply(
+rpy_no number(5) PRIMARY KEY,
+rpy_bno number(5),
+rpy_writer varchar2(50) not null,
+rpy_content varchar2(100) not null,
+rpy_regdate date default sysdate,
+rpy_updatedate date default sysdate,
+FOREIGN KEY (rpy_bno) REFERENCES tbl_reviewBoard(rb_no) ON DELETE CASCADE
+)
+
+
+
+
+< QnA 게시판 테이블 생성 >
+
+CREATE TABLE tbl_qnaBoard(
+qna_no number(5) PRIMARY KEY,
+qna_title varchar2(100) not null,
+qna_content varchar2(1000) not null,
+qna_writer varchar2(50) not null,
+qna_regdate date default sysdate,
+qna_readcnt number(5) default 0,
+qna_repRoot number(5),		
+qna_repIndent number(5)
+)	
+
+
+
+<잘못 만들었으면 드랍하세요>
+
+ex)	drop table tbl_member
+
+
+<계정 내 모든 테이블 확인>
+
+ex)	select * from tab
+
+
+<테이블 정보 보기> ## cmd창에서만 가능 ##
+
+ex)	desc tbl_wine
+
+
+<컬럼 추가>
+
+ex)	alter table tbl_member add(mem_address1 varchar2(50))
+
+
+<컬럼 속성 교체>
+
+ex)	alter table tbl_member modify(mem_name varchar2(50))
+
+	alter table tbl_wine modify(wine_stock default 1)
+
+
+<컬럼 삭제>
+
+ex)	alter table tbl_wine drop column wine_img
+
+
+
+ 
+
+
